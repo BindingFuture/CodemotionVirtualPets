@@ -1,33 +1,32 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using VirtualPets.Scripts;
 
-[RequireComponent(typeof(TMP_Text))]
-public class PetNameDisplay : MonoBehaviour
+namespace VirtualPets.Scripts
 {
-    private TMP_Text _text;
-    
-    void Awake()
+    [RequireComponent(typeof(TMP_Text))]
+    public class PetNameDisplay : MonoBehaviour
     {
-        _text = GetComponent<TMP_Text>();
-    }
+        private TMP_Text _text;
 
-    private void Start()
-    {
-        ClearName();
-    }
+        void Awake()
+        {
+            _text = GetComponent<TMP_Text>();
+        }
 
-    public void UpdateName(GameObject go)
-    {
-        _text.enabled = true;
-        _text.text = go.GetComponent<PetName>().Name;
-    }
+        private void Start()
+        {
+            ClearName();
+        }
 
-    public void ClearName()
-    {
-        _text.enabled = false;
+        public void UpdateName(GameObject go)
+        {
+            _text.enabled = true;
+            _text.text = go.GetComponent<PetName>().Name;
+        }
+
+        public void ClearName()
+        {
+            _text.enabled = false;
+        }
     }
 }
