@@ -15,9 +15,7 @@ namespace VirtualPets.Scripts
 
         string GenerateRandomName()
         {
-            var generator = new PersonNameGenerator();
-
-            return generator.GenerateRandomMaleFirstName();
+            return "<ANIMAL>";
         }
     }
 }

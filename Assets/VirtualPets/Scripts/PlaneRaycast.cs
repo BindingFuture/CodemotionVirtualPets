@@ -43,28 +43,7 @@ namespace VirtualPets.Scripts
         
         public void RaycastPlane(Kind kind)
         {
-            var rayStart = rayCamera.ViewportToScreenPoint(_viewPortCenter);
-            
-            if (!_raycastManager.Raycast(rayStart, _hits, TrackableType.PlaneWithinPolygon)) 
-                return;
-            
-            // Raycast hits are sorted by distance, so the first one
-            // will be the closest hit.
-            var hitPose = _hits[0].pose;
-            var hitTrackableId = _hits[0].trackableId;
-            var hitPlane = _planeManager.GetPlane(hitTrackableId);
-                
-            // This attaches an anchor to the area on the plane corresponding to the raycast hit
-            var anchor = _anchorManager.AttachAnchor(hitPlane, hitPose);
-
-            if (anchor)
-            {
-                onPlaneHitFound.Invoke(anchor.transform, kind);
-            }
-            else
-            {
-                Debug.Log("Error creating anchor.");
-            }
+            // TODO
         }
     }
 }
