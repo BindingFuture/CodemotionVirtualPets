@@ -27,24 +27,7 @@ namespace VirtualPets.Scripts
         // Update is called once per frame
         void Update()
         {
-            var ray = rayCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-
-            if(Physics.Raycast(ray, out var hitInfo, 10000, LayerMask.GetMask(raycastLayer)))
-            {
-                if (_lastDetectedPet != hitInfo.transform.gameObject)
-                {
-                    _lastDetectedPet = hitInfo.transform.gameObject;
-                    onPetDetected.Invoke(_lastDetectedPet);
-                }
-            }
-            else
-            {
-                if (_lastDetectedPet)
-                {
-                    onPetUndetected.Invoke(_lastDetectedPet);
-                    _lastDetectedPet = null;
-                }
-            }
+           // TODO: complete this
         }
     }
 }

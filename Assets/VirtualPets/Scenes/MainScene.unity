@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 22732923}
   - component: {fileID: 22732922}
   - component: {fileID: 22732921}
-  - component: {fileID: 22732925}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -261,23 +260,6 @@ Transform:
   m_Father: {fileID: 388525031}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &22732925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22732919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15f82cc229284894964d2d30806969d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HumanSegmentationStencilMode: 3
-  m_HumanSegmentationDepthMode: 2
-  m_EnvironmentDepthMode: 3
-  m_EnvironmentDepthTemporalSmoothing: 1
-  m_OcclusionPreferenceMode: 0
 --- !u!1 &388525029
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,9 +273,7 @@ GameObject:
   - component: {fileID: 388525032}
   - component: {fileID: 388525034}
   - component: {fileID: 388525033}
-  - component: {fileID: 388525036}
   - component: {fileID: 388525035}
-  - component: {fileID: 388525037}
   - component: {fileID: 388525038}
   m_Layer: 0
   m_Name: AR Session Origin
@@ -389,102 +369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pet: {fileID: 155106578749064340, guid: 2be645487303f5c4d91710a5c30a679b, type: 3}
---- !u!114 &388525036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388525029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15041ad4a99444da80d98e08e7591b59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onPlaneHitFound:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 388525035}
-        m_TargetAssemblyTypeName: VirtualPets.Scripts.PetSpawner, Assembly-CSharp
-        m_MethodName: SpawnPet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  rayCamera: {fileID: 22732920}
---- !u!114 &388525037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388525029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f9629144d8f62143b57abcde03c2299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastLayer: Pets
-  rayCamera: {fileID: 22732920}
-  onPetDetected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 388525038}
-        m_TargetAssemblyTypeName: VirtualPets.Scripts.DebugLogger, Assembly-CSharp
-        m_MethodName: Log
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5232041024563304173}
-        m_TargetAssemblyTypeName: VirtualPets.Scripts.PetNameDisplay, Assembly-CSharp
-        m_MethodName: UpdateName
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onPetUndetected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 388525038}
-        m_TargetAssemblyTypeName: VirtualPets.Scripts.DebugLogger, Assembly-CSharp
-        m_MethodName: LogString
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Pet undetected
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5232041024563304173}
-        m_TargetAssemblyTypeName: VirtualPets.Scripts.PetNameDisplay, Assembly-CSharp
-        m_MethodName: ClearName
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Pet undetected
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &388525038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +391,6 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
-  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -592,19 +475,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &705507996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705507993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8413adce848534eb30f4b6665c9e80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arCameraManager: {fileID: 22732922}
 --- !u!1 &1758066838
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +595,7 @@ PrefabInstance:
     - target: {fileID: 1654478938599305190, guid: 82ad99cdd9c44af4e9cc1865cbbdc4c5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1654478938599305190, guid: 82ad99cdd9c44af4e9cc1865cbbdc4c5,
         type: 3}
@@ -736,7 +606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 388525036}
+      objectReference: {fileID: 0}
     - target: {fileID: 1654478938599305190, guid: 82ad99cdd9c44af4e9cc1865cbbdc4c5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -770,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 5738148941134703803, guid: 82ad99cdd9c44af4e9cc1865cbbdc4c5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5738148941134703803, guid: 82ad99cdd9c44af4e9cc1865cbbdc4c5,
         type: 3}
@@ -781,7 +651,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 388525036}
+      objectReference: {fileID: 0}
     - target: {fileID: 5738148941134703803, guid: 82ad99cdd9c44af4e9cc1865cbbdc4c5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -918,18 +788,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82ad99cdd9c44af4e9cc1865cbbdc4c5, type: 3}
---- !u!114 &5232041024563304173 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3900964144249605548, guid: 82ad99cdd9c44af4e9cc1865cbbdc4c5,
-    type: 3}
-  m_PrefabInstance: {fileID: 5232041024563304171}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea2ecfaccb68434a88c2925e39e9f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5434462552450501220
 MonoBehaviour:
   m_ObjectHideFlags: 0
